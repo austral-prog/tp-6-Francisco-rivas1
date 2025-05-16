@@ -1,20 +1,34 @@
-# Replace the "ANSWER HERE" with your answer
+def remove_elements(lista):
+    result = lista.copy()
+    indices_to_remove = [0, 4, 5]
+    for index in sorted(indices_to_remove, reverse=True):
+        if index < len(result):
+            del result[index]
+    return result
 
-def remove_elements(list_to_remove_elements):
-    return "ANSWER HERE"  # Remove this line and implement
 
-
-def add_elements(list_to_add_elements):
-    return "ANSWER HERE"  # Remove this line and implement
+def add_elements(lista_add):
+    result = lista_add.copy()
+    result.insert(0, 'Pink')    
+    result.append('Yellow')     
+    return result
 
 
 def is_empty(list_to_check):
-    return "ANSWER HERE"  # Remove this line and implement
+    return len(list_to_check) == 0
 
 
 def check_lists(list_to_compare1, list_to_compare2):
-    return "ANSWER HERE"  # Remove this line and implement
+    return sorted(list_to_compare1) == sorted(list_to_compare2)
 
 
 def list_of_lists(list_of_lists_to_modify):
-    return "ANSWER HERE"  # Remove this line and implement
+    if len(list_of_lists_to_modify) != 3:
+        return list_of_lists_to_modify
+    else:
+        return [
+        list_of_lists_to_modify[0][:2],  
+        list_of_lists_to_modify[1][1:4] 
+        if len(list_of_lists_to_modify[1]) >= 4 
+        else list_of_lists_to_modify[1][1:],  
+        list_of_lists_to_modify[2][-2:]]
